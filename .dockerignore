@@ -1,0 +1,6 @@
+.git
+.gitignore
+*_orig.jpg
+railway.json
+Dockerfile
+README.md
