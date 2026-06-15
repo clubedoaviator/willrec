@@ -3,98 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Variante 2</title>
+<title>Will.rec — Transforme seu celular em uma câmera de cinema</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: #0d4039;
+  :root{
+    --green:#0d4039;
+    --green-soft:rgba(255,255,255,0.04);
+    --cream:#fcfad3;
+    --cream-dim:#f3efd6;
+    --accent:#6dcd83;
+    --gold:#f5c518;
+    --line:rgba(109,205,131,0.40);
   }
+  html, body { margin:0; padding:0; background:var(--green); }
   .page {
-    max-width: 480px;
-    margin: 0 auto;
-    background: #0d4039;
-    font-size: 0;
-    line-height: 0;
+    max-width:480px;
+    margin:0 auto;
+    background:var(--green);
+    font-size:0;
+    line-height:0;
   }
-  .page img {
-    width: 100%;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 0;
+  .page img { width:100%; display:block; margin:0; padding:0; border:0; }
+
+  /* ===== Blocos HTML (oferta, garantia, depoimentos, faq) ===== */
+  .blk{
+    background:var(--green);
+    font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    color:var(--cream);
+    padding:46px 20px;
+  }
+  .blk__label{
+    text-align:center; color:var(--accent);
+    font-size:12px; font-weight:800; letter-spacing:3px;
+    text-transform:uppercase; margin:0 0 8px;
+  }
+  .blk__title{
+    text-align:center; color:var(--cream);
+    font-size:27px; font-weight:900; line-height:1.15; margin:0 0 24px;
+  }
+  .blk__title span{ color:var(--accent); }
+
+  /* botão */
+  .cta{
+    display:block; width:100%; box-sizing:border-box;
+    background:var(--accent); color:var(--green);
+    font-family:'Nunito',sans-serif; font-weight:900; font-size:17px;
+    text-align:center; text-decoration:none;
+    padding:17px 24px; border:0; border-radius:999px; cursor:pointer;
+    letter-spacing:.3px; box-shadow:0 8px 22px rgba(109,205,131,.25);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .cta:active{ transform:translateY(1px); }
+  .cta--ghost{
+    background:transparent; color:var(--cream);
+    border:1.5px solid var(--line); box-shadow:none;
   }
 
-  /* ===== Seção de depoimentos ===== */
-  .depo {
-    background: #0d4039;
-    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 44px 20px 56px;
-    color: #fcfad3;
+  /* lista "o que vai receber" */
+  .recv{ list-style:none; padding:0; margin:0 0 26px; }
+  .recv li{
+    display:flex; align-items:flex-start; gap:11px;
+    font-size:15.5px; color:var(--cream-dim);
+    padding:11px 0; border-bottom:1px solid rgba(255,255,255,.07);
   }
-  .depo__label {
-    text-align: center;
-    color: #6dcd83;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin: 0 0 6px;
+  .recv li:last-child{ border-bottom:0; }
+  .recv .ck{
+    flex:0 0 22px; height:22px; margin-top:1px;
+    background:var(--accent); color:var(--green);
+    border-radius:50%; font-size:13px; font-weight:900;
+    display:flex; align-items:center; justify-content:center;
   }
-  .depo__title {
-    text-align: center;
-    color: #fcfad3;
-    font-size: 27px;
-    font-weight: 800;
-    line-height: 1.15;
-    margin: 0 0 28px;
+
+  /* caixa de oferta */
+  .offer{
+    background:var(--green-soft);
+    border:1.5px solid var(--line);
+    border-radius:20px; padding:26px 22px; text-align:center;
   }
-  .depo__title span { color: #6dcd83; }
-  .depo__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+  .offer__old{ color:var(--cream-dim); opacity:.7; font-size:15px; }
+  .offer__old s{ text-decoration-thickness:1.5px; }
+  .offer__main{ color:var(--cream); font-size:16px; font-weight:700; margin:4px 0 2px; }
+  .offer__main b{ font-size:34px; font-weight:900; color:var(--cream); display:block; line-height:1.05; margin-top:2px; }
+  .offer__cash{ color:var(--accent); font-size:17px; font-weight:800; margin:10px 0 22px; }
+
+  /* garantia */
+  .guar{
+    background:var(--green-soft);
+    border:1.5px solid var(--line);
+    border-radius:20px; padding:28px 22px; text-align:center;
   }
-  .depo__card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1.5px solid rgba(109, 205, 131, 0.40);
-    border-radius: 16px;
-    padding: 18px 14px 16px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .guar__badge{
+    display:inline-block; background:var(--accent); color:var(--green);
+    font-weight:900; font-size:13px; letter-spacing:1px; text-transform:uppercase;
+    padding:8px 18px; border-radius:999px; margin-bottom:16px;
   }
-  .depo__stars {
-    color: #f5c518;
-    font-size: 15px;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+  .guar__txt{ color:var(--cream-dim); font-size:15px; margin:0 auto 22px; max-width:380px; }
+
+  /* depoimentos */
+  .depo__grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px; }
+  .depo__card{
+    background:var(--green-soft); border:1.5px solid var(--line);
+    border-radius:16px; padding:18px 14px 16px; text-align:center;
+    display:flex; flex-direction:column; align-items:center;
   }
-  .depo__quote {
-    color: #f3efd6;
-    font-size: 12.5px;
-    line-height: 1.55;
-    margin: 0 0 14px;
-    flex: 1;
+  .depo__stars{ color:var(--gold); font-size:15px; letter-spacing:2px; margin-bottom:12px; }
+  .depo__quote{ color:var(--cream-dim); font-size:12.5px; line-height:1.55; margin:0 0 14px; flex:1; }
+  .depo__name{ color:var(--accent); font-weight:800; font-size:13.5px; margin:0 0 10px; }
+  .depo__flag{ font-size:22px; line-height:1; }
+
+  /* faq */
+  .faq{ margin:0 auto; max-width:440px; }
+  .faq details{
+    background:var(--green-soft); border:1.5px solid var(--line);
+    border-radius:14px; margin-bottom:12px; overflow:hidden;
   }
-  .depo__name {
-    color: #6dcd83;
-    font-weight: 800;
-    font-size: 13.5px;
-    margin: 0 0 10px;
+  .faq summary{
+    list-style:none; cursor:pointer; padding:17px 20px;
+    font-weight:800; font-size:15px; color:var(--cream);
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
   }
-  .depo__flag {
-    font-size: 22px;
-    line-height: 1;
-  }
-  @media (max-width: 400px) {
-    .depo__grid { grid-template-columns: 1fr; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:"+"; color:var(--accent); font-size:24px; font-weight:900; line-height:1; }
+  .faq details[open] summary::after{ content:"–"; }
+  .faq__a{ padding:0 20px 18px; color:var(--cream-dim); font-size:14.5px; line-height:1.6; }
+
+  @media (max-width:400px){
+    .depo__grid{ grid-template-columns:1fr; }
   }
 </style>
 </head>
@@ -107,55 +145,107 @@
     <img src="s5.jpg" alt="">
     <img src="s6.jpg" alt="">
 
-    <section class="depo">
-      <p class="depo__label">Depoimentos</p>
-      <h2 class="depo__title">Quem usa, <span>recomenda</span></h2>
-      <div class="depo__grid">
+    <!-- ===== O QUE VOCÊ VAI RECEBER + OFERTA ===== -->
+    <section class="blk" id="oferta">
+      <p class="blk__label">O que você vai receber</p>
+      <h2 class="blk__title">Tudo pronto pra <span>usar hoje</span></h2>
 
+      <ul class="recv">
+        <li><span class="ck">✓</span> Pacote completo de filtros de cinema prontos para fotos e vídeos</li>
+        <li><span class="ck">✓</span> Aplicação em 1 clique — direto no seu celular, instale em segundos</li>
+        <li><span class="ck">✓</span> Tutorial COMPLETO de como aplicar os filtros na prática</li>
+        <li><span class="ck">✓</span> Acesso vitalício</li>
+        <li><span class="ck">✓</span> LUTs para Log</li>
+        <li><span class="ck">✓</span> LUTs para Rec. 709</li>
+        <li><span class="ck">✓</span> Powergrades para DaVinci Resolve</li>
+      </ul>
+
+      <div class="offer">
+        <div class="offer__old"><s>De R$ 599,00</s></div>
+        <div class="offer__main">por <b>12x de R$ 12,80</b></div>
+        <div class="offer__cash">ou R$ 97,00 à vista</div>
+        <a class="cta" href="#" data-checkout>COMPRAR AGORA</a>
+      </div>
+    </section>
+
+    <!-- ===== GARANTIA ===== -->
+    <section class="blk">
+      <div class="guar">
+        <span class="guar__badge">Garantia de 7 dias</span>
+        <p class="guar__txt">Isso é praticamente impossível, mas caso você não se adapte aos filtros do LUT, você tem 7 dias úteis para testar — e, se quiser, devolvemos 100% do seu dinheiro.</p>
+        <a class="cta" href="#oferta">DECIDI, QUERO COMPRAR</a>
+      </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section class="blk">
+      <p class="blk__label">Depoimentos</p>
+      <h2 class="blk__title">Quem usou, <span>nos contou isso</span></h2>
+      <div class="depo__grid">
         <div class="depo__card">
           <div class="depo__stars">★★★★★</div>
           <p class="depo__quote">O Will Luts deu uma identidade única para os meus trabalhos, deixando cada produção com a minha assinatura.</p>
           <p class="depo__name">Jorge Bianco</p>
           <span class="depo__flag">🇧🇷</span>
         </div>
-
         <div class="depo__card">
           <div class="depo__stars">★★★★★</div>
           <p class="depo__quote">O Will Luts é o LUT mais versátil que já usei, plug-and-play e pronto para qualquer projeto.</p>
           <p class="depo__name">Daniel Fontanetti</p>
           <span class="depo__flag">🇺🇸</span>
         </div>
-
         <div class="depo__card">
           <div class="depo__stars">★★★★★</div>
           <p class="depo__quote">O Will Luts realça as cores de um jeito marcante e único, fazendo cada frame ganhar destaque e vida própria.</p>
           <p class="depo__name">Ben Chitoff</p>
           <span class="depo__flag">🇺🇸</span>
         </div>
-
         <div class="depo__card">
           <div class="depo__stars">★★★★★</div>
           <p class="depo__quote">Melhor investimento que fiz nos últimos meses. Os melhores LUTs que já encontrei, disparado.</p>
           <p class="depo__name">Emanuel Lucas</p>
           <span class="depo__flag">🇧🇷</span>
         </div>
-
         <div class="depo__card">
           <div class="depo__stars">★★★★★</div>
           <p class="depo__quote">Pra mim, que gravo em log no iPhone, ter os Will Luts é bom demais e me salva muito por ser prático e sempre ter a melhor qualidade de cores.</p>
           <p class="depo__name">Matheus Santos</p>
           <span class="depo__flag">🇧🇷</span>
         </div>
-
         <div class="depo__card">
           <div class="depo__stars">★★★★★</div>
           <p class="depo__quote">Com o Will Luts, o resultado que consegui nos meus vídeos superou minhas expectativas e deixou tudo simplesmente maravilhoso.</p>
           <p class="depo__name">André Partida</p>
           <span class="depo__flag">🇲🇽</span>
         </div>
+      </div>
+      <a class="cta" href="#oferta">QUERO ESSE RESULTADO</a>
+    </section>
 
+    <!-- ===== FAQ ===== -->
+    <section class="blk">
+      <p class="blk__label">FAQ</p>
+      <h2 class="blk__title">Perguntas <span>frequentes</span></h2>
+      <div class="faq">
+        <details>
+          <summary>Como acesso o produto?</summary>
+          <div class="faq__a">Assim que a compra é confirmada, você recebe o acesso por e-mail com todos os arquivos e o tutorial. O acesso é vitalício — baixa e usa quando quiser, em quantos dispositivos precisar.</div>
+        </details>
+        <details>
+          <summary>Preciso comprar algum aplicativo?</summary>
+          <div class="faq__a">Não. Os LUTs funcionam direto no app gratuito Blackmagic Camera e em editores como CapCut e DaVinci Resolve. Você não precisa pagar por nenhum software extra.</div>
+        </details>
+        <details>
+          <summary>E se eu não gostar dos filtros?</summary>
+          <div class="faq__a">Você tem 7 dias de garantia. Se não se adaptar, é só pedir o reembolso e devolvemos 100% do valor, sem burocracia.</div>
+        </details>
+        <details>
+          <summary>Funciona para qualquer celular?</summary>
+          <div class="faq__a">Sim. Há LUTs para perfil Log (iPhone 15 Pro ou superior) e LUTs para o perfil padrão, que funcionam em qualquer modelo de celular — Android ou iPhone.</div>
+        </details>
       </div>
     </section>
+
   </div>
 </body>
 </html>
