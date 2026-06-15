@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Variante 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   html, body {
     margin: 0;
@@ -24,6 +27,75 @@
     padding: 0;
     border: 0;
   }
+
+  /* ===== Seção de depoimentos ===== */
+  .depo {
+    background: #0d4039;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 44px 20px 56px;
+    color: #fcfad3;
+  }
+  .depo__label {
+    text-align: center;
+    color: #6dcd83;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+  .depo__title {
+    text-align: center;
+    color: #fcfad3;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0 0 28px;
+  }
+  .depo__title span { color: #6dcd83; }
+  .depo__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .depo__card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(109, 205, 131, 0.40);
+    border-radius: 16px;
+    padding: 18px 14px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .depo__stars {
+    color: #f5c518;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .depo__quote {
+    color: #f3efd6;
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin: 0 0 14px;
+    flex: 1;
+  }
+  .depo__name {
+    color: #6dcd83;
+    font-weight: 800;
+    font-size: 13.5px;
+    margin: 0 0 10px;
+  }
+  .depo__flag {
+    font-size: 22px;
+    line-height: 1;
+  }
+  @media (max-width: 400px) {
+    .depo__grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -34,6 +106,56 @@
     <img src="s4.jpg" alt="">
     <img src="s5.jpg" alt="">
     <img src="s6.jpg" alt="">
+
+    <section class="depo">
+      <p class="depo__label">Depoimentos</p>
+      <h2 class="depo__title">Quem usa, <span>recomenda</span></h2>
+      <div class="depo__grid">
+
+        <div class="depo__card">
+          <div class="depo__stars">★★★★★</div>
+          <p class="depo__quote">O Will Luts deu uma identidade única para os meus trabalhos, deixando cada produção com a minha assinatura.</p>
+          <p class="depo__name">Jorge Bianco</p>
+          <span class="depo__flag">🇧🇷</span>
+        </div>
+
+        <div class="depo__card">
+          <div class="depo__stars">★★★★★</div>
+          <p class="depo__quote">O Will Luts é o LUT mais versátil que já usei, plug-and-play e pronto para qualquer projeto.</p>
+          <p class="depo__name">Daniel Fontanetti</p>
+          <span class="depo__flag">🇺🇸</span>
+        </div>
+
+        <div class="depo__card">
+          <div class="depo__stars">★★★★★</div>
+          <p class="depo__quote">O Will Luts realça as cores de um jeito marcante e único, fazendo cada frame ganhar destaque e vida própria.</p>
+          <p class="depo__name">Ben Chitoff</p>
+          <span class="depo__flag">🇺🇸</span>
+        </div>
+
+        <div class="depo__card">
+          <div class="depo__stars">★★★★★</div>
+          <p class="depo__quote">Melhor investimento que fiz nos últimos meses. Os melhores LUTs que já encontrei, disparado.</p>
+          <p class="depo__name">Emanuel Lucas</p>
+          <span class="depo__flag">🇧🇷</span>
+        </div>
+
+        <div class="depo__card">
+          <div class="depo__stars">★★★★★</div>
+          <p class="depo__quote">Pra mim, que gravo em log no iPhone, ter os Will Luts é bom demais e me salva muito por ser prático e sempre ter a melhor qualidade de cores.</p>
+          <p class="depo__name">Matheus Santos</p>
+          <span class="depo__flag">🇧🇷</span>
+        </div>
+
+        <div class="depo__card">
+          <div class="depo__stars">★★★★★</div>
+          <p class="depo__quote">Com o Will Luts, o resultado que consegui nos meus vídeos superou minhas expectativas e deixou tudo simplesmente maravilhoso.</p>
+          <p class="depo__name">André Partida</p>
+          <span class="depo__flag">🇲🇽</span>
+        </div>
+
+      </div>
+    </section>
   </div>
 </body>
 </html>
