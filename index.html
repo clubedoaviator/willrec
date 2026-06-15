@@ -17,23 +17,41 @@
     --gold:#f5c518;
     --line:rgba(109,205,131,0.40);
   }
-  html, body { margin:0; padding:0; background:var(--green); }
+  html, body { margin:0; padding:0; background:var(--green); overflow-x:hidden; }
   .page {
     max-width:480px;
     margin:0 auto;
     background:var(--green);
     font-size:0;
     line-height:0;
+    position:relative;
+    overflow:hidden;
   }
   .page img { width:100%; display:block; margin:0; padding:0; border:0; }
   .imglink { display:block; font-size:0; line-height:0; }
 
+  /* ===== Profundidade cinematográfica (grão + glow) ===== */
+  .hero, .blk{ position:relative; }
+  .hero::before, .blk::before{
+    content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size:150px 150px;
+    opacity:.05; mix-blend-mode:overlay;
+  }
+  .hero > *, .blk > *{ position:relative; z-index:1; }
+
   /* ===== SEÇÃO 1 — HERO ===== */
   .hero{
-    background:var(--green);
+    background-color:var(--green);
+    background-image:radial-gradient(130% 78% at 50% -6%, rgba(109,205,131,0.17), rgba(13,64,57,0) 58%);
     font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif;
     text-align:center;
-    padding:42px 22px 50px;
+    padding:48px 22px 86px;
+    overflow:hidden;
+  }
+  .hero__drip{
+    position:absolute; left:-1px; right:-1px; bottom:-1px; width:calc(100% + 2px);
+    height:56px; display:block; z-index:2;
   }
   .page img.hero__logo{ width:118px; height:auto; display:block; margin:0 auto 26px; }
   .hero__title{
@@ -57,6 +75,14 @@
     padding:46px 20px;
   }
   .blk--tight{ padding-top:8px; }
+  /* glows suaves de profundidade */
+  #oferta::after, .depo-sec::after{
+    content:""; position:absolute; width:360px; height:360px; border-radius:50%;
+    background:radial-gradient(circle, rgba(109,205,131,0.11), rgba(13,64,57,0) 68%);
+    z-index:0; pointer-events:none;
+  }
+  #oferta::after{ top:20px; right:-150px; }
+  .depo-sec::after{ bottom:40px; left:-160px; }
   .blk__label{
     text-align:center; color:var(--accent);
     font-size:12px; font-weight:800; letter-spacing:3px;
@@ -160,10 +186,13 @@
 
     <!-- ===== SEÇÃO 1 — HERO ===== -->
     <section class="hero">
-      <img class="hero__logo" src="logo_will.jpg" alt="Will.rec">
+      <img class="hero__logo" src="logo_will.png" alt="Will.rec">
       <h1 class="hero__title">Em um clique, seu celular vira uma <span>câmera de cinema</span></h1>
       <p class="hero__sub">Sem equipamento caro. Sem curso de edição. Só você, seu celular e o LUT que faltava nos seus vídeos e fotos.</p>
       <a class="cta" href="#oferta">COMPRAR AGORA</a>
+      <svg class="hero__drip" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="#fcfad3" d="M0,30 C210,58 370,6 600,22 C820,37 1010,60 1230,30 C1320,18 1380,22 1440,30 L1440,60 L0,60 Z"/>
+      </svg>
     </section>
 
     <!-- ===== SEÇÃO 2 — VEJA O RESULTADO NA PRÁTICA ===== -->
@@ -207,7 +236,7 @@
     </section>
 
     <!-- ===== SEÇÃO 4 — DEPOIMENTOS ===== -->
-    <section class="blk">
+    <section class="blk depo-sec">
       <p class="blk__label">Depoimentos</p>
       <h2 class="blk__title">Quem usou uma vez, <span>nos contou isso</span></h2>
       <div class="depo__grid">
