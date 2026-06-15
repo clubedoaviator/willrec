@@ -28,6 +28,25 @@
   .page img { width:100%; display:block; margin:0; padding:0; border:0; }
   .imglink { display:block; font-size:0; line-height:0; }
 
+  /* ===== SEÇÃO 1 — HERO ===== */
+  .hero{
+    background:var(--green);
+    font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif;
+    text-align:center;
+    padding:42px 22px 50px;
+  }
+  .hero__logo{ width:152px; height:auto; display:block; margin:0 auto 40px; }
+  .hero__title{
+    color:var(--cream); font-size:33px; font-weight:900; line-height:1.12;
+    margin:0 auto 18px; max-width:430px;
+  }
+  .hero__title span{ color:var(--accent); }
+  .hero__sub{
+    color:var(--cream-dim); font-size:16px; line-height:1.55;
+    margin:0 auto 30px; max-width:400px;
+  }
+  .hero .cta{ max-width:340px; margin:0 auto; }
+
   /* ===== Blocos HTML ===== */
   .blk{
     background:var(--green);
@@ -140,7 +159,12 @@
   <div class="page">
 
     <!-- ===== SEÇÃO 1 — HERO ===== -->
-    <a class="imglink" href="#oferta"><img src="s1.jpg" alt="Em um clique, seu celular vira uma câmera de cinema"></a>
+    <section class="hero">
+      <img class="hero__logo" src="logo_will.jpg" alt="Will.rec">
+      <h1 class="hero__title">Em um clique, seu celular vira uma <span>câmera de cinema</span></h1>
+      <p class="hero__sub">Sem equipamento caro. Sem curso de edição. Só você, seu celular e o LUT que faltava nos seus vídeos e fotos.</p>
+      <a class="cta" href="#oferta">COMPRAR AGORA</a>
+    </section>
 
     <!-- ===== SEÇÃO 2 — VEJA O RESULTADO NA PRÁTICA ===== -->
     <a class="imglink" href="#oferta"><img src="s2.jpg" alt="Arraste para o lado e sinta o poder de um profissional"></a>
